@@ -6,8 +6,14 @@
 #include <avr/sleep.h>
 #include <EEPROM.h>
 
-#define ELEPHANT
+// This file can be compiled for two different targets; one is the Heart-o-Matic 10, and
+// the other is an elephant-shaped PCB with 11 LEDs. The elephant has some significant differences,
+// notably that all the battery management stuff is stripped out and the battery is charged by an
+// external charger connected to the ISP header, and that the inputs are actual buttons and are
+// active low (using the ATtiny85 internal pullups)
+// Uncomment the following #define to compile for the elephant:
 
+//#define ELEPHANT
 
 #define LED_PIN PIN_PB3
 #define TOUCH_PIN1 PIN_PB4
